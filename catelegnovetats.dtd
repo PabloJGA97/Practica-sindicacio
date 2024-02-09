@@ -1,0 +1,14 @@
+<!ELEMENT rss (channel)>
+<!ELEMENT channel (title, link, description, pubDate, dc:date, item+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT pubDate (#PCDATA)>
+<!ELEMENT dc:date (#PCDATA)>
+<!ELEMENT item (title, link, description, pubDate, guid, dc:creator, dc:date)>
+<!ELEMENT guid (#PCDATA)>
+<!ATTLIST guid isPermaLink CDATA #IMPLIED>
+<!ELEMENT dc:creator (#PCDATA)>
+<!ATTLIST rss xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
+<!ATTLIST rss xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
+<!ATTLIST rss version CDATA #REQUIRED>
