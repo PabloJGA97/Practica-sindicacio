@@ -1,22 +1,18 @@
 services:
   apache:
     image: ubuntu/apache2
-    container_name: apache2-http2
+    container_name: apache2-http
     ports:
       - "80:80"
-      - "443:443"
     volumes:
       - ./config:/etc/apache2/sites-enabled
-      - ./certs:/etc/apache2/ssl
     command: >
-      bash -c "a2enmod socache_shmcb &&
-               a2enmod ssl &&
+      bash -c "
                a2enmod http2 &&
                apache2ctl -D FOREGROUND"
     restart: unless-stopped
     networks:
       - webhosting_network
-
 
 networks:
   webhosting_network:
